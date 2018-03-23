@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stackoverflow - How do I draw a Diagonal div?</title>
+    <style>
+      
+      body{
+        overflow: hidden;
+        margin: 0 0 0 0;
+      }
+
+      .line {
+        background-color: skyblue;
+        height: 100px;
+        margin-left: -1925px;
+        margin-bottom: 100px;
+        
+        -webkit-transform: skewY(-45deg);
+        -moz-transform: skewY(-45deg);
+        -ms-transform: skewY(-45deg);
+        -o-transform: skewY(-45deg);
+        transform: skewY(-45deg);
+
+        transition: all 0.5s ease-in-out;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <script type="text/javascript">
+      var body = document.body;
+      var lines = Math.round(window.innerWidth/100);
+
+      for(var i = 0; i < lines; i++){
+        body.innerHTML += '<div class="line"></div>';
+      }
+
+      setInterval(colorChange,2000);
+
+      function colorChange(){
+        var linesArr = document.getElementsByClassName('line');
+        var color = '#'+ Math.random().toString(16).slice(-6);
+
+        for(var i = 0; i < linesArr.length;i++){
+          linesArr[i].style.backgroundColor = color;
+        }
+      }
+
+    </script>
+  </body>
+</html>
